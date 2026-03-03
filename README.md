@@ -2,6 +2,8 @@
 
 A framework-free PHP REST API with Users and Tasks domains, layered architecture, and PDO-based data access.
 
+A simple vanilla JS frontend is included at `/app.html` for managing users and tasks through the browser.
+
 ## Requirements
 
 - Docker & Docker Compose
