@@ -1,0 +1,16 @@
+{
+    "name": "app/tasks-assignment",
+    "description": "Vanilla PHP REST API — Users & Tasks",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=8.3"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^7.4",
+        "phpunit/phpunit": "^12.5"
+    }
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks Management</title>
+    <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <span class="logo">Tasks Management</span>
+            <a href="#" class="nav-link active" data-section="tasks">Tasks</a>
+            <a href="#" class="nav-link" data-section="users">Users</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- TASKS SECTION -->
+        <section id="section-tasks" class="section">
+            <div class="section-header">
+                <h2>Tasks</h2>
+                <button class="btn btn-primary" onclick="showForm('task')">New Task</button>
+            </div>
+
+            <div id="task-form" class="form-card hidden">
+                <h3 id="task-form-title">New Task</h3>
+                <input type="hidden" id="task-id">
+                <div class="form-group">
+                    <label for="task-title">Title</label>
+                    <input type="text" id="task-title" placeholder="Task title">
+                </div>
+                <div class="form-group">
+                    <label for="task-description">Description</label>
+                    <textarea id="task-description" placeholder="Optional description" rows="2"></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="task-status">Status</label>
+                        <select id="task-status">
+                            <option value="todo">Todo</option>
+                            <option value="in_progress">In Progress</option>
+                            <option value="done">Done</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-user">Assigned User</label>
+                        <select id="task-user"></select>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn btn-primary" onclick="saveTask()">Save</button>
+                    <button class="btn btn-ghost" onclick="hideForm('task')">Cancel</button>
+                </div>
+            </div>
+
+            <table id="tasks-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Status</th>
+                        <th>Assigned To</th>
+                        <th>Created</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="tasks-body"></tbody>
+            </table>
+            <p id="tasks-empty" class="empty-msg hidden">No tasks found.</p>
+        </section>
+
+        <!-- USERS SECTION -->
+        <section id="section-users" class="section hidden">
+            <div class="section-header">
+                <h2>Users</h2>
+                <button class="btn btn-primary" onclick="showForm('user')">New User</button>
+            </div>
+
+            <div id="user-form" class="form-card hidden">
+                <h3 id="user-form-title">New User</h3>
+                <input type="hidden" id="user-id">
+                <div class="form-group">
+                    <label for="user-name">Name</label>
+                    <input type="text" id="user-name" placeholder="Full name">
+                </div>
+                <div class="form-group">
+                    <label for="user-email">Email</label>
+                    <input type="email" id="user-email" placeholder="email@example.com">
+                </div>
+                <div class="form-actions">
+                    <button class="btn btn-primary" onclick="saveUser()">Save</button>
+                    <button class="btn btn-ghost" onclick="hideForm('user')">Cancel</button>
+                </div>
+            </div>
+
+            <table id="users-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Created</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="users-body"></tbody>
+            </table>
+            <p id="users-empty" class="empty-msg hidden">No users found.</p>
+        </section>
+    </main>
+
+    <div id="toast" class="toast hidden"></div>
+
+    <script src="/app.js"></script>
+</body>
+</html>
