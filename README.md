@@ -4,6 +4,8 @@ A framework-free PHP REST API with Users and Tasks domains, layered architecture
 
 A simple vanilla JS frontend is included at `/app.html` for managing users and tasks through the browser.
 
+All controllers, services, and repositories were written manually without AI-generated code.
+
 ## Requirements
 
 - Docker & Docker Compose
